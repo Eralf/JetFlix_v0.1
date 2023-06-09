@@ -559,27 +559,27 @@ var actor_role_4 = document.getElementById("actor_role_4");
 var actor_pic_4 = document.getElementById("actor_pic_4");
 
 
-poster.src = "/Posters/Poster_Detail_" + data[id].poster + ".jpg";
+poster.src = "./Posters/Poster_Detail_" + data[id].poster + ".jpg";
 title.innerHTML = data[id].title;
 season_amount.innerHTML = data[id].season_amount + " Seasons";
 genre.innerHTML = data[id].genre[0] + ", " + data[id].genre[1] + ", " + data[id].genre[2];
 creator.innerHTML = data[id].creator;
 synopsis.innerHTML = data[id].synopsis;
-bg.src = "/Posters/Poster_Detail_Alt_" + data[id].poster + ".jpg";
-clip.src = "/Posters/Poster_Detail_Alt_" + data[id].poster + ".jpg";
+bg.src = "./Posters/Poster_Detail_Alt_" + data[id].poster + ".jpg";
+clip.src = "./Posters/Poster_Detail_Alt_" + data[id].poster + ".jpg";
 
 actor_name_1.innerHTML = data[id].cast[0].name;
 actor_role_1.innerHTML = data[id].cast[0].role;
-actor_pic_1.src = "/Actors/" + data[id].cast[0].name + ".jpg";
+actor_pic_1.src = "./Actors/" + data[id].cast[0].name + ".jpg";
 actor_name_2.innerHTML = data[id].cast[1].name;
 actor_role_2.innerHTML = data[id].cast[1].role;
-actor_pic_2.src = "/Actors/" + data[id].cast[1].name + ".jpg";
+actor_pic_2.src = "./Actors/" + data[id].cast[1].name + ".jpg";
 actor_name_3.innerHTML = data[id].cast[2].name;
 actor_role_3.innerHTML = data[id].cast[2].role;
-actor_pic_3.src = "/Actors/" + data[id].cast[2].name + ".jpg";
+actor_pic_3.src = "./Actors/" + data[id].cast[2].name + ".jpg";
 actor_name_4.innerHTML = data[id].cast[3].name;
 actor_role_4.innerHTML = data[id].cast[3].role;
-actor_pic_4.src = "/Actors/" + data[id].cast[3].name + ".jpg";
+actor_pic_4.src = "./Actors/" + data[id].cast[3].name + ".jpg";
 //#endregion
 
 var season_tabs = [document.getElementById("season_tab_1")];
@@ -641,7 +641,7 @@ function resetEpisodes() {
 }
 function setEpisodes() {
 	for(let i = 0; i < data[id].seasons[selectedSeason].episodes.length; i++) {
-		episodes[i].children[0].children[0].src = "/Episodes/" + data[id].title + "_S" + (selectedSeason+1) + "E" + (i+1) + ".png";
+		episodes[i].children[0].children[0].src = "./Episodes/" + data[id].title + "_S" + (selectedSeason+1) + "E" + (i+1) + ".png";
 		episodes[i].children[1].children[0].innerHTML = data[id].seasons[selectedSeason].episodes[i].title;
 		episodes[i].children[1].children[1].innerHTML = "Ep " + (i+1) + "&nbsp;&nbsp;-&nbsp;&nbsp;" + data[id].seasons[selectedSeason].episodes[i].duration;
 		episodes[i].children[1].children[2].innerHTML = data[id].seasons[selectedSeason].episodes[i].synopsis;
