@@ -1,0 +1,1059 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700");
+
+:root {
+    --font-montserrat: "Montserrat", sans-serif;
+	--leftMargin: 46px;
+
+	--color-main: #a61eff;
+	--color-highlighted: #e8c0ff;
+	--color-highlighted-50: #e8c0ff80;
+
+	--regular: 400;
+	--medium: 500;
+	--semibold: 600;
+	--bold: 700;
+}
+
+* {
+    font-family: var(--font-montserrat);
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+
+.background {
+	position: fixed;
+	top: 0; left: 0;
+
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(
+		to bottom,
+		#19141f,
+		#141116
+	);
+
+	z-index: -5;
+}
+
+.button_play, .button_details {
+	cursor: pointer;
+}
+
+/*#region Footer*/
+.footer {
+	position: absolute;
+	top: 1607px; left: 0;
+
+	height: 80px;
+	width: 100%;
+	background-image: linear-gradient(
+		to bottom,
+		rgba(0, 0, 0, 0.1),
+		rgba(0, 0, 0, 0.5)
+	);
+
+	display: flex;
+	align-items: center;
+}
+.footer h3 {
+	position: absolute;
+	left: 46px;
+
+	font-size: 12px;
+	font-weight: var(--semibold);
+	color: white;
+}
+/*#endregion*/
+
+/*#region NavBar*/
+.navBar {
+	position: fixed;
+	top: 0; left: 0;
+
+	height: 70px;
+	width: 100%;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	z-index: 5;
+}
+.navBar .color {
+	position: absolute;
+	top: 0; left: 0;
+	height: 1024px;
+	width: 100%;
+	
+	background-image: linear-gradient(
+		to bottom,
+		#151217 0%,
+		#18121e 10%,
+		#151217 100%
+	);
+}
+.navBar .left {
+	position: relative;
+	top: 0; left: 0;
+
+	min-width: 640px;
+	width: 720px;
+	height: 100%;
+	
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+}
+.navBar .logo {
+	position: relative;
+	top: 3px;
+	margin-left: 60px;
+	margin-right: 60px;
+	height: 100%;
+}
+.navBar .home {
+	position: relative;
+
+	min-width: fit-content;
+	width: 120px;
+}
+.navBar .movies {
+	position: relative;
+
+	min-width: fit-content;
+	width: 129px;
+}
+.navBar .popular {
+	position: relative;
+
+	min-width: fit-content;
+	width: 235px;
+}
+.navBar a {
+	position: relative;
+
+	min-width: fit-content;
+	font-size: 24px;
+	font-weight: var(--regular);
+	color: white;
+	text-decoration: none;
+}
+.navBar .movies a {
+	font-weight: var(--semibold);
+	color: var(--color-highlighted);
+}
+.navBar .right {
+	position: relative;
+
+	width: 720px;
+	min-width: 172px;
+	max-width: 720px;
+	
+	display: flex;
+	justify-content: right;
+}
+.navBar .pfp {
+	position: relative;
+	margin-right: 60px;
+
+	min-width: 40px;
+	height: 40px;
+	width: 40px;
+	border-radius: 4px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.navBar .pfp img {
+	position: absolute;
+	top: 46px;
+	left: -11px;
+
+	width: 100%;
+	scale: 3;
+}
+.navBar .searchBar {
+	position: relative;
+	margin-left: 10px;
+	margin-right: 10px;
+	
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+	width: 420px;
+	max-width: 100%;
+	height: 40px;
+	background-color: white;
+
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+}
+.navBar .searchBar h3 {
+	position: relative;
+	margin-left: 20px;
+	
+	max-width: calc(100% - 20px - 18px - 2*16px);
+	font-size: 16px;
+	font-weight: var(--medium);
+	overflow: hidden;
+	white-space: nowrap;
+	color: rgba(0, 0, 0, 0.5);
+}
+.navBar .searchBar img {
+	position: absolute;
+	right: 16px;
+	
+	height: 18px;
+	width: 18px;
+	filter: opacity(.5);
+}
+/*#endregion*/
+
+/*#region Jumbotron*/
+.jumbotron {
+	position: absolute;
+	top: 0; left: 0;
+
+	height: 560px;
+	width: 100%;
+}
+.jumbotron .bg {
+	position: absolute;
+	top: 0; right: 0;
+
+	height: 100%;
+	width: 1025px;
+	overflow: hidden;
+	
+	-webkit-mask-image: linear-gradient(
+		to bottom,
+		rgba(0, 0, 0, 1) 80%,
+		rgba(0, 0, 0, .2) 90%,
+		rgba(0, 0, 0, 0) 100%
+	);
+	mask-image: linear-gradient(
+		to bottom,
+		rgba(0, 0, 0, 1) 80%,
+		rgba(0, 0, 0, .2) 90%,
+		rgba(0, 0, 0, 0) 100%
+	);
+}
+.jumbotron .bg .mask {
+	position: absolute;
+	top: 0; right: 0;
+
+	height: 100%;
+	width: 100%;
+	-webkit-mask-image: linear-gradient(
+		to left,
+		rgba(0, 0, 0, 1) 60%,
+		rgba(0, 0, 0, .2) 80%,
+		rgba(0, 0, 0, 0) 100%
+	);
+	mask-image: linear-gradient(
+		to left,
+		rgba(0, 0, 0, 1) 60%,
+		rgba(0, 0, 0, .2) 80%,
+		rgba(0, 0, 0, 0) 100%
+	);
+}
+.jumbotron .bg img {
+	position: absolute;
+
+	top: -220px; right: 0px;
+	width: 100%;
+	scale: 1;
+}
+.jumbotron .titleCard {
+	position: absolute;
+	top: 100px; left: var(--leftMargin);
+	
+	height: 220px;
+	width: 520px;
+}
+.jumbotron .titleCard img {
+	position: absolute;
+	top: 0; left: 0;
+	
+	max-width: 100%;
+	max-height: 100%;
+	filter: drop-shadow(0 0 20px black);
+}
+.jumbotron .synopsis {
+	position: absolute;
+	top: 320px; left: 46px;
+
+	height: 180px;
+	width: 484px;
+}
+.jumbotron .synopsis h3 {
+	position: absolute;
+	bottom: 0; left: 0;
+	margin-bottom: 30px;
+
+	color: white;
+	font-size: 20px;
+	font-weight: var(--medium);
+}
+.jumbotron .button_play {
+	position: absolute;
+	top: 500px; left: 46px;
+
+	width: 170px;
+	height: 60px;
+	border-radius: 8px;
+
+	background-color: var(--color-highlighted-50);
+	display: flex;
+	align-items: center;
+}
+.jumbotron .button_play .icon {
+	position: absolute;
+	left: 22px;
+
+	width: 45px;
+	max-width: 45px;
+	height: 45px;
+	max-height: 45px;
+}
+.jumbotron .button_play h3 {
+	position: absolute;
+	left: 78px;
+
+	color: var(--color-highlighted);
+	font-size: 28px;
+	font-weight: var(--semibold);
+}
+.jumbotron .button_details {
+	position: absolute;
+	top: 500px; left: 232px;
+
+	width: 425px;
+	height: 60px;
+	border-radius: 8px;
+
+	background-image: linear-gradient(
+		to right,
+		rgba(255, 255, 255, .25),
+		rgba(255, 255, 255, 0)
+	);
+
+	display: flex;
+	align-items: center;
+}
+.jumbotron .button_details .icon {
+	position: absolute;
+	left: 26px;
+
+	width: 35px;
+	height: 35px;
+	border-radius: 100px;
+	border-color: white;
+	border-style: solid;
+	border-width: 4px;
+	box-sizing: border-box;
+
+	display: flex;
+	align-items: center;
+}
+.jumbotron .button_details .icon h3 {
+	position: absolute;
+	left: 10.5px;
+
+	color: white;
+	font-size: 22px;
+	font-weight: var(--semibold);
+}
+.jumbotron .button_details h3 {
+	position: absolute;
+	left: 74px;
+
+	color: white;
+	font-size: 28px;
+	font-weight: var(--semibold);
+}
+/*#endregion*/
+
+/*#region Categories*/
+.category {
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%;
+	height: 250px; /*212px;*/
+}
+.category h2 {
+	position: absolute;
+	top: 0; left: 0;
+	margin-top: 0;
+
+	width: 100%;
+	font-size: 32px;
+	font-weight: var(--semibold);
+	color: white;
+}
+.category .cards {
+	position: absolute;
+	top: 62px; left: 0px;
+
+	height: 150px;
+	width: 100%;
+
+	display: flex;
+}
+.category .movie_card {
+	position: relative;
+	margin-right: 10px;
+
+	min-width: 230px;
+	width: 230px;
+	height: 100%;
+	border-radius: 8px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.category .movie_card img {
+	position: absolute;
+	width: 100%;
+}
+.category .movie_card .title {
+	position: absolute;
+	bottom: 0;
+
+	height: 28px;
+	width: 100%;
+	background-image: linear-gradient(
+		to bottom,
+		rgba(96, 96, 96, 0.7) 0%,
+		rgba(32, 32, 32, 0.7) 10%,
+		rgba(16, 16, 16, 0.7) 100%
+
+	);
+	backdrop-filter: blur(3px);
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.category .movie_card h3 {
+	position: absolute;
+
+	font-size: 12px;
+	font-weight: var(--semibold);
+	color: white;
+	text-align: center;
+}
+
+.superhero {
+	top: 610px; left: 46px;
+}
+.superhero ._1 img {
+	top: -42px;
+}
+.superhero ._2 img {
+	top: -98px;
+}
+.superhero ._3 img {
+	top: 12px; left: -6px;
+	scale: 1.2;
+}
+.superhero ._4 img {
+	top: 20px; left: 12px;
+	scale: 1.45;
+}
+.superhero ._5 img {
+	top: 12px; left: -6px;
+	scale: 1.2;
+}
+
+.romance {
+	top: 860px; left: 46px;
+}
+.romance ._1 img {
+	top: -60px;
+}
+.romance ._2 img {
+	top: 14px; left: -2px;
+	scale: 1.25;
+}
+.romance ._3 img {
+	top: -10px;
+}
+.romance ._4 img {
+	top: 0px;
+}
+.romance ._5 img {
+	top: -230px; left: 30px;
+	scale: 1.25;
+}
+
+.action_comedies {
+	top: 1110px; left: 46px;
+}
+.action_comedies ._1 img {
+	top: -130px;
+}
+.action_comedies ._2 img {
+	top: -20px;
+}
+.action_comedies ._3 img {
+	top: -25px;
+}
+.action_comedies ._4 img {
+	top: 0px;
+}
+.action_comedies ._5 img {
+	top: 10px;
+	scale: 1.2;
+}
+
+.thriller {
+	top: 1360px; left: 46px;
+}
+.thriller ._1 img {
+	top: 10px; left: -10px;
+	scale: 1.2;
+}
+.thriller ._2 img {
+	top: 18px;
+	scale: 1.35;
+}
+.thriller ._3 img {
+	top: 10px; left: 8px;
+	scale: 1.2;
+}
+.thriller ._4 img {
+	top: 18px;
+	scale: 1.3;
+}
+.thriller ._5 img {
+	top: -30px; left: -5px;
+	scale: 1.1;
+}
+/*#endregion*/
+
+
+
+
+
+@media screen and (max-width: 768px) {
+	/*#region NavBar*/
+	.navBar {
+		position: fixed;
+		top: 0; left: 0;
+	
+		height: 50px;
+		width: 100%;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+	
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+		z-index: 5;
+	}
+	.navBar .color {
+		position: absolute;
+		top: 0; left: 0;
+		height: 1024px;
+		width: 100%;
+		
+		background-image: linear-gradient(
+			to bottom,
+			#151217 0%,
+			#18121e 10%,
+			#151217 100%
+		);
+	}
+	.navBar .left {
+		position: relative;
+		top: 0; left: 0;
+	
+		min-width: 10px;
+		width: 80%;
+		height: 100%;
+		
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+	}
+	.navBar .logo {
+		position: relative;
+		top: 1px;
+		margin-left: 14px;
+		margin-right: 14px;
+		height: 67%;
+	}
+	.navBar .home {
+		position: relative;
+	
+		min-width: fit-content;
+		width: 60px;
+	}
+	.navBar .movies {
+		position: relative;
+	
+		min-width: fit-content;
+		width: 67px;
+	}
+	.navBar .popular {
+		position: relative;
+	
+		min-width: fit-content;
+		width: 136px;
+	}
+	.navBar a {
+		position: relative;
+	
+		min-width: fit-content;
+		font-size: 14px;
+		font-weight: var(--regular);
+		color: white;
+		text-decoration: none;
+	}
+	.navBar .movies a {
+		font-weight: var(--semibold);
+		color: var(--color-highlighted);
+	}
+	.navBar .right {
+		position: relative;
+	
+		width: 20%;
+		min-width: 10px;
+		max-width: 50%;
+		
+		display: flex;
+		justify-content: right;
+	}
+	.navBar .pfp {
+		position: relative;
+		margin-right: 14px;
+	
+		min-width: 28px;
+		height: 28px;
+		width: 28px;
+		border-radius: 4px;
+		overflow: hidden;
+		cursor: pointer;
+	}
+	.navBar .pfp img {
+		position: absolute;
+		top: 32px;
+		left: -8px;
+	
+		width: 100%;
+		scale: 3;
+	}
+	.navBar .searchBar {
+		position: relative;
+		margin-left: 0px;
+		margin-right: 10px;
+		
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
+		border-top-left-radius: 0px;
+		border-bottom-left-radius: 0px;
+		width: 26px;
+		max-width: 100%;
+		height: 26px;
+		background-color: transparent;
+	
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+	}
+	.navBar .searchBar h3 {
+		position: relative;
+		margin-left: 20px;
+		
+		content: "";
+		max-width: calc(100% - 20px - 18px - 2*16px);
+		font-size: 16px;
+		font-weight: var(--medium);
+		overflow: hidden;
+		white-space: nowrap;
+		color: rgba(0, 0, 0, 0.5);
+	}
+	.navBar .searchBar img {
+		position: absolute;
+		right: 0px;
+		
+		height: 16px;
+		width: 16px;
+		filter: invert();
+	}
+	/*#endregion*/
+
+	/*#region Jumbotron*/
+	.jumbotron {
+		position: absolute;
+		top: 0; left: 0;
+
+		height: 400px;
+		width: 100%;
+
+		display: flex;
+		justify-content: center;
+	}
+	.jumbotron .bg {
+		position: absolute;
+		top: 0; right: 0;
+
+		height: 100%;
+		width: 100%;
+		overflow: hidden;
+		
+		-webkit-mask-image: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 1) 80%,
+			rgba(0, 0, 0, .2) 90%,
+			rgba(0, 0, 0, 0) 100%
+		);
+		mask-image: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 1) 80%,
+			rgba(0, 0, 0, .2) 90%,
+			rgba(0, 0, 0, 0) 100%
+		);
+	}
+	.jumbotron .bg .mask {
+		position: absolute;
+		top: 0; right: 0;
+
+		height: 100%;
+		width: 100%;
+		-webkit-mask-image: none;
+		mask-image: none;
+		background-color: blue;
+	}
+	.jumbotron .bg img {
+		position: absolute;
+
+		top: -40px; right: 0px;
+		width: 100%;
+		scale: 1;
+	}
+	.jumbotron .titleCard {
+		position: absolute;
+		top: 80px; left: 0px;
+		
+		height: 120px;
+		width: 100%;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.jumbotron .titleCard img {
+		position: relative;
+		top: 0; left: 0;
+		
+		max-width: 100%;
+		max-height: 100%;
+		filter: drop-shadow(0 0 20px black);
+	}
+	.jumbotron .synopsis {
+		position: absolute;
+		top: 214px; left: 20px;
+
+		height: 180px;
+		width: calc(100% - 2 * 20px);
+	}
+	.jumbotron .synopsis h3 {
+		position: absolute;
+		top: 0; left: 0;
+		margin-bottom: 30px;
+
+		text-align: center;
+		color: white;
+		font-size: 14px;
+		font-weight: var(--medium);
+		filter: drop-shadow(0 2px 4px black) drop-shadow(0 2px 4px black);
+	}
+	.jumbotron .button_play {
+		position: absolute;
+		top: 330px; left: 20px;
+
+		width: 128px;
+		height: 52px;
+		border-radius: 8px;
+
+		background-color: var(--color-highlighted-50);
+		display: flex;
+		align-items: center;
+	}
+	.jumbotron .button_play .icon {
+		position: absolute;
+		left: 12px;
+
+		width: 40px;
+		max-width: 40px;
+		height: 40px;
+		max-height: 40px;
+	}
+	.jumbotron .button_play h3 {
+		position: absolute;
+		left: 56px;
+
+		color: var(--color-highlighted);
+		font-size: 24px;
+		font-weight: var(--semibold);
+	}
+	.jumbotron .button_details {
+		position: absolute;
+		top: 330px; left: 158px;
+
+		width: calc(100% - 128px - 2 * 20px);
+		height: 52px;
+		border-radius: 8px;
+
+		background-image: linear-gradient(
+			to right,
+			rgba(255, 255, 255, .25),
+			rgba(255, 255, 255, 0)
+		);
+
+		display: flex;
+		align-items: center;
+	}
+	.jumbotron .button_details .icon {
+		position: absolute;
+		left: 20px;
+
+		width: 30px;
+		height: 30px;
+		border-radius: 100px;
+		border-color: white;
+		border-style: solid;
+		border-width: 4px;
+		box-sizing: border-box;
+
+		display: flex;
+		align-items: center;
+	}
+	.jumbotron .button_details .icon h3 {
+		position: absolute;
+		left: 8.7px;
+
+		color: white;
+		font-size: 18px;
+		font-weight: var(--semibold);
+	}
+	.jumbotron .button_details h3 {
+		position: absolute;
+		left: 62px;
+
+		color: white;
+		font-size: 24px;
+		font-weight: var(--semibold);
+	}
+	/*#endregion*/
+
+	/*#region Categories*/
+	.category {
+		position: absolute;
+		top: 0; left: 0;
+		width: 100%;
+		height: 870px;
+	}
+	.category h2 {
+		position: absolute;
+		top: 0; left: 0;
+		margin-top: 0;
+
+		width: 100%;
+		text-align: center;
+		font-size: 28px;
+		font-weight: var(--semibold);
+		color: white;
+	}
+	.category .cards {
+		position: absolute;
+		top: 48px;
+		
+		height: 800px;
+		width: 100%;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.category .movie_card {
+		position: relative;
+		margin-bottom: 10px;
+		margin-right: 0px;
+
+		min-width: 80%;
+		width: 80%;
+		min-height: 150px;
+		height: 150px;
+		border-radius: 0px;
+
+		-webkit-mask-image: linear-gradient(
+			to left,
+			rgba(0, 0, 0, 0) 0%,
+			rgba(0, 0, 0, 1) 20%,
+			rgba(0, 0, 0, 1) 80%,
+			rgba(0, 0, 0, 0) 100%
+		);
+		mask-image: linear-gradient(
+			to left,
+			rgba(0, 0, 0, 0) 0%,
+			rgba(0, 0, 0, 1) 20%,
+			rgba(0, 0, 0, 1) 80%,
+			rgba(0, 0, 0, 0) 100%
+		);
+
+		overflow: hidden;
+		cursor: pointer;
+	}
+	.category .movie_card img {
+		position: absolute;
+		width: 100%;
+	}
+	.category .movie_card .title {
+		position: absolute;
+		bottom: 0;
+
+		height: 36px;
+		width: 100%;
+		background-image: linear-gradient(
+			to bottom,
+			rgba(96, 96, 96, 0.7) 0%,
+			rgba(32, 32, 32, 0.7) 10%,
+			rgba(16, 16, 16, 0.7) 100%
+
+		);
+		backdrop-filter: blur(3px);
+		
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.category .movie_card h3 {
+		position: absolute;
+
+		font-size: 16px;
+		font-weight: var(--semibold);
+		color: white;
+		text-align: center;
+	}
+
+	.superhero {
+		top: 420px; left: 0px;
+	}
+	.superhero ._1 img {
+		top: -62px;
+	}
+	.superhero ._2 img {
+		top: -138px;
+	}
+	.superhero ._3 img {
+		top: 12px; left: -6px;
+		scale: 1.2;
+	}
+	.superhero ._4 img {
+		top: 20px; left: 12px;
+		scale: 1.45;
+	}
+	.superhero ._5 img {
+		top: -30px; left: -6px;
+		scale: 1.2;
+	}
+
+	.romance {
+		top: 1320px; left: 0px;
+	}
+	.romance ._1 img {
+		top: -110px;
+	}
+	.romance ._2 img {
+		top: 14px; left: -2px;
+		scale: 1.25;
+	}
+	.romance ._3 img {
+		top: -30px;
+	}
+	.romance ._4 img {
+		top: -10px;
+	}
+	.romance ._5 img {
+		top: -320px; left: 30px;
+		scale: 1.25;
+	}
+
+	.action_comedies {
+		top: 2220px; left: 0px;
+	}
+	.action_comedies ._1 img {
+		top: -220px;
+	}
+	.action_comedies ._2 img {
+		top: -56px;
+	}
+	.action_comedies ._3 img {
+		top: -70px;
+	}
+	.action_comedies ._4 img {
+		top: -20px;
+	}
+	.action_comedies ._5 img {
+		top: 18px;
+		scale: 1.2;
+	}
+
+	.thriller {
+		top: 3120px; left: 0px;
+	}
+	.thriller ._1 img {
+		top: 10px; left: -10px;
+		scale: 1.2;
+	}
+	.thriller ._2 img {
+		top: 18px;
+		scale: 1.35;
+	}
+	.thriller ._3 img {
+		top: 10px; left: 8px;
+		scale: 1.2;
+	}
+	.thriller ._4 img {
+		top: -22px;
+		scale: 1;
+	}
+	.thriller ._5 img {
+		top: -60px; left: 0px;
+		scale: 1;
+	}
+	/*#endregion*/
+
+	/*#region Footer*/
+	.footer {
+		position: absolute;
+		top: 4040px; left: 0;
+
+		height: 80px;
+		width: 100%;
+		background-image: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.1),
+			rgba(0, 0, 0, 0.5)
+		);
+
+		display: flex;
+		align-items: center;
+	}
+	.footer h3 {
+		position: absolute;
+		left: 46px;
+
+		font-size: 12px;
+		font-weight: var(--semibold);
+		color: white;
+	}
+	/*#endregion*/
+}

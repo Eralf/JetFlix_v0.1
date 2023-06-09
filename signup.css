@@ -1,0 +1,977 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700");
+
+:root {
+    --font-montserrat: "Montserrat", sans-serif;
+	--leftMargin: 46px;
+
+	--color-main: #a61eff;
+	--color-highlighted: #e8c0ff;
+	
+	--regular: 400;
+	--medium: 500;
+	--semibold: 600;
+	--bold: 700;
+}
+
+* {
+    font-family: var(--font-montserrat);
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+body {
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+@keyframes backgroundColorScroll {
+	0% {
+		top: 0;
+	}
+	100% {
+		top: -200%;
+	}
+}
+
+.background {
+	position: fixed;
+	top: 0; left: 0;
+
+	height: 400%;
+	width: 100%;
+	background-image: linear-gradient(
+		to bottom,
+		#201926 0%,
+		#151217 25%,
+		#201926 50%,
+		#151217 75%,
+		#201926 100%
+	);
+	animation-name: backgroundColorScroll;
+	animation-duration: 4s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+
+	z-index: -5;
+}
+
+/*#region Footer*/
+.footer {
+	position: absolute;
+	bottom: 0px; left: 0;
+
+	height: 80px;
+	width: 100%;
+	background-image: linear-gradient(
+		to bottom,
+		rgba(0, 0, 0, 0.1),
+		rgba(0, 0, 0, 0.5)
+	);
+
+	display: flex;
+	align-items: center;
+}
+.footer h3 {
+	position: absolute;
+	left: 46px;
+
+	font-size: 12px;
+	font-weight: var(--semibold);
+	color: white;
+}
+/*#endregion*/
+
+/*#region NavBar*/
+.navBar {
+	position: fixed;
+	top: 0; left: 0;
+
+	height: 70px;
+	width: 100%;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	z-index: 5;
+}
+.navBar .color {
+	position: absolute;
+	top: 0; left: 0;
+	height: 1024px;
+	width: 100%;
+	
+	background-image: linear-gradient(
+		to bottom,
+		#151217 0%,
+		#18121e 10%,
+		#151217 100%
+	);
+}
+.navBar .left {
+	position: relative;
+	top: 0; left: 0;
+
+	min-width: 640px;
+	width: 720px;
+	height: 100%;
+	
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+}
+.navBar .logo {
+	position: relative;
+	top: 3px;
+	margin-left: 60px;
+	margin-right: 60px;
+	height: 100%;
+}
+.navBar .home {
+	position: relative;
+
+	min-width: fit-content;
+	width: 120px;
+}
+.navBar .movies {
+	position: relative;
+
+	min-width: fit-content;
+	width: 129px;
+}
+.navBar .popular {
+	position: relative;
+
+	min-width: fit-content;
+	width: 235px;
+}
+.navBar a {
+	position: relative;
+
+	min-width: fit-content;
+	font-size: 24px;
+	font-weight: var(--regular);
+	color: white;
+	text-decoration: none;
+}
+.navBar .right {
+	position: relative;
+
+	width: 720px;
+	min-width: 172px;
+	max-width: 720px;
+	
+	display: flex;
+	justify-content: right;
+}
+.navBar .pfp {
+	position: relative;
+	margin-right: 60px;
+
+	min-width: 40px;
+	height: 40px;
+	width: 40px;
+	border-radius: 4px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.navBar .pfp img {
+	position: absolute;
+	top: 46px;
+	left: -11px;
+
+	width: 100%;
+	scale: 3;
+}
+.navBar .searchBar {
+	position: relative;
+	margin-left: 10px;
+	margin-right: 10px;
+	
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+	width: 420px;
+	max-width: 100%;
+	height: 40px;
+	background-color: white;
+
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+}
+.navBar .searchBar h3 {
+	position: relative;
+	margin-left: 20px;
+	
+	max-width: calc(100% - 20px - 18px - 2*16px);
+	font-size: 16px;
+	font-weight: var(--medium);
+	overflow: hidden;
+	white-space: nowrap;
+	color: rgba(0, 0, 0, 0.5);
+}
+.navBar .searchBar img {
+	position: absolute;
+	right: 16px;
+	
+	height: 18px;
+	width: 18px;
+	filter: opacity(.5);
+}
+/*#endregion*/
+
+/*#region Form*/
+.signup {
+	position: absolute;
+	top: 0; left: 0;
+
+	width: 100%;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+}
+.signup .form {
+	position: absolute;
+	top: 70px;
+
+	width: 540px;
+	height: 650px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 16px;
+	border-bottom-right-radius: 16px;
+	background-image: linear-gradient(
+		to bottom,
+		white,
+		rgba(255, 255, 255, 0.9)
+	);
+
+	display: flex;
+	justify-content: center;
+}
+.form .logo {
+	position: absolute;
+	top: 10px;
+
+	width: 172px;
+}
+.form .title {
+	position: absolute;
+	top: 107px;
+	margin: 0;
+	
+	text-align: center;
+	font-size: 30px;
+	font-weight: var(--bold);
+	color: black;
+}
+.form .input {
+	position: absolute;
+	
+	width: 100%;
+	height: 76px;
+}
+.form .input h2 {
+	position: absolute;
+	top: 0px; left: 46px;
+	margin: 0;
+	
+	color: black;
+	font-size: 24px;
+	font-weight: var(--semibold);
+}
+.form .input div {
+	position: absolute;
+	bottom: 0; left: 46px;
+	
+	width: calc(100% - 46px * 2);
+	height: 40px;
+	background-color: white;
+	border-radius: 8px;
+    box-sizing: border-box;
+	border: 2px inset black;
+
+	display: flex;
+	align-items: center;
+}
+.form .input div input {
+	position: absolute;
+	left: 10px;
+	
+	font-size: 18px;
+	font-weight: var(--medium);
+	width: calc(100% - 30px);
+	border-radius: 8px;
+	background-color: transparent;
+	border: none;
+	outline: none;
+}
+.form .username {
+	top: 160px;
+}
+.form .password {
+	top: 254px;
+}
+.form .password_confirm {
+	top: 348px;
+}
+
+.form .birthday_gender {
+	position: absolute;
+	top: 442px; left: 46px;
+}
+.form .birthday_gender h2 {
+	position: absolute;
+	top: 0; left: 0;
+	margin: 0;
+	
+	color: black;
+	font-size: 24px;
+	font-weight: var(--semibold);
+}
+
+.form .birthday {
+	position: absolute;
+	top: 0px; left: 0px;
+
+	width: 182px;
+	height: 76px;
+	/* background-color: red; */
+}
+.form .birthday h3 {
+	position: absolute;
+	margin: 0;
+	
+	color: rgba(0, 0, 0, 0.5);
+	font-size: 16px;
+	font-weight: var(--medium);
+}
+.form .birthday .dd {
+	position: absolute;
+	bottom: 0px; left: 0px;
+
+	width: 52px;
+	height: 38px;
+	border-radius: 8px;
+    box-sizing: border-box;
+	border: 2px inset black;
+	background-color: white;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.form .birthday .mm {
+	position: absolute;
+	bottom: 0px; left: 60px;
+
+	width: 52px;
+	height: 38px;
+	border-radius: 8px;
+    box-sizing: border-box;
+	border: 2px inset black;
+	background-color: white;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.form .birthday .yyyy {
+	position: absolute;
+	bottom: 0px; left: 120px;
+
+	width: 62px;
+	height: 38px;
+	border-radius: 8px;
+    box-sizing: border-box;
+	border: 2px inset black;
+	background-color: white;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.form .gender {
+	position: absolute;
+	top: 0px; left: 212px;
+
+	width: 236px;
+	height: 76px;
+}
+.form .gender .male input {
+	display: none;
+}
+.form .gender .male label {
+	position: absolute;
+	bottom: 0px; left: 0px;
+
+	width: 114px;
+	height: 38px;
+	border-radius: 8px;
+    box-sizing: border-box;
+	border: 2px inset black;
+	background-color: rgba(0, 0, 0, 0.025);
+	
+	display: flex;
+	align-items: center;
+}
+.form .gender .male label h3 {
+	position: absolute;
+	left: 46px;
+
+	color: black;
+	font-size: 16px;
+	font-weight: var(--semibold);
+}
+.form .gender .male label img {
+	position: absolute;
+	left: 20px;
+
+	width: 20px;
+	height: 20px;
+}
+.form .gender .male input:checked + label {
+	background-color: #cef0ff;
+}
+.form .gender .female input {
+	display: none;
+}
+.form .gender .female label {
+	position: absolute;
+	bottom: 0px; left: 122px;
+
+	width: 114px;
+	height: 38px;
+	border-radius: 8px;
+    box-sizing: border-box;
+	border: 2px inset black;
+	background-color: rgba(0, 0, 0, 0.025);
+	
+	display: flex;
+	align-items: center;
+}
+.form .gender .female label h3 {
+	position: absolute;
+	left: 34px;
+
+	color: black;
+	font-size: 16px;
+	font-weight: var(--semibold);
+}
+.form .gender .female label img {
+	position: absolute;
+	left: 9px;
+
+	width: 20px;
+	height: 20px;
+}
+.form .gender .female input:checked + label {
+	background-color: #FFE7F7;
+}
+
+
+.form .tnc {
+	position: absolute;
+	top: 536px; left: 46px;
+}
+.form .tnc input {
+	scale: 1.35;
+	accent-color: var(--color-main);
+}
+.form .tnc label::after {
+	content: "Terms & Conditions";
+	color: var(--color-main);
+	text-decoration: underline;
+	font-size: 18px;
+	font-weight: var(--medium);
+	cursor: pointer;
+}
+.form .tnc label {
+	margin-left: 4px;
+	color: black;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: var(--medium);
+	cursor: default;
+}
+.form .button_submit {
+	position: absolute;
+	top: 577px;
+
+	width: 478px;
+	height: 50px;
+	border-radius: 100px;
+	border: none;
+	background-color: var(--color-main);
+	
+	color: white;
+	font-size: 28px;
+	font-weight: var(--bold);
+
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+/*#endregion*/
+
+
+
+
+
+@media screen and (max-width: 768px) {
+	/*#region NavBar*/
+	.navBar {
+		position: fixed;
+		top: 0; left: 0;
+	
+		height: 50px;
+		width: 100%;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+	
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+		z-index: 5;
+	}
+	.navBar .color {
+		position: absolute;
+		top: 0; left: 0;
+		height: 1024px;
+		width: 100%;
+		
+		background-image: linear-gradient(
+			to bottom,
+			#151217 0%,
+			#18121e 10%,
+			#151217 100%
+		);
+	}
+	.navBar .left {
+		position: relative;
+		top: 0; left: 0;
+	
+		min-width: 10px;
+		width: 80%;
+		height: 100%;
+		
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+	}
+	.navBar .logo {
+		position: relative;
+		top: 1px;
+		margin-left: 14px;
+		margin-right: 14px;
+		height: 67%;
+	}
+	.navBar .home {
+		position: relative;
+	
+		min-width: fit-content;
+		width: 60px;
+	}
+	.navBar .movies {
+		position: relative;
+	
+		min-width: fit-content;
+		width: 67px;
+	}
+	.navBar .popular {
+		position: relative;
+	
+		min-width: fit-content;
+		width: 136px;
+	}
+	.navBar a {
+		position: relative;
+	
+		min-width: fit-content;
+		font-size: 14px;
+		font-weight: var(--regular);
+		color: white;
+		text-decoration: none;
+	}
+	.navBar .right {
+		position: relative;
+	
+		width: 20%;
+		min-width: 10px;
+		max-width: 50%;
+		
+		display: flex;
+		justify-content: right;
+	}
+	.navBar .pfp {
+		position: relative;
+		margin-right: 14px;
+	
+		min-width: 28px;
+		height: 28px;
+		width: 28px;
+		border-radius: 4px;
+		overflow: hidden;
+		cursor: pointer;
+	}
+	.navBar .pfp img {
+		position: absolute;
+		top: 32px;
+		left: -8px;
+	
+		width: 100%;
+		scale: 3;
+	}
+	.navBar .searchBar {
+		position: relative;
+		margin-left: 0px;
+		margin-right: 10px;
+		
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
+		border-top-left-radius: 0px;
+		border-bottom-left-radius: 0px;
+		width: 26px;
+		max-width: 100%;
+		height: 26px;
+		background-color: transparent;
+	
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+	}
+	.navBar .searchBar h3 {
+		position: relative;
+		margin-left: 20px;
+		
+		content: "";
+		max-width: calc(100% - 20px - 18px - 2*16px);
+		font-size: 16px;
+		font-weight: var(--medium);
+		overflow: hidden;
+		white-space: nowrap;
+		color: rgba(0, 0, 0, 0.5);
+	}
+	.navBar .searchBar img {
+		position: absolute;
+		right: 0px;
+		
+		height: 16px;
+		width: 16px;
+		filter: invert();
+	}
+	/*#endregion*/
+
+	/*#region Form*/
+	.signup {
+		position: absolute;
+		top: 0; left: 0;
+
+		width: 100%;
+		z-index: 1;
+		display: flex;
+		justify-content: center;
+	}
+	.signup .form {
+		position: absolute;
+		top: 50px;
+
+		width: 90%;
+		height: 720px;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		border-bottom-left-radius: 16px;
+		border-bottom-right-radius: 16px;
+		background-image: linear-gradient(
+			to bottom,
+			white,
+			rgba(255, 255, 255, 0.9)
+		);
+
+		display: flex;
+		justify-content: center;
+	}
+	.form .logo {
+		position: absolute;
+		top: 10px;
+
+		width: 172px;
+	}
+	.form .title {
+		position: absolute;
+		top: 107px;
+		margin: 0;
+		
+		text-align: center;
+		font-size: 30px;
+		font-weight: var(--bold);
+		color: black;
+	}
+	.form .input {
+		position: absolute;
+		
+		width: 100%;
+		height: 76px;
+	}
+	.form .input h2 {
+		position: absolute;
+		top: 0px; left: 20px;
+		margin: 0;
+		
+		color: black;
+		font-size: 24px;
+		font-weight: var(--semibold);
+	}
+	.form .input div {
+		position: absolute;
+		bottom: 0; left: 20px;
+		
+		width: calc(100% - 20px * 2);
+		height: 40px;
+		background-color: white;
+		border-radius: 8px;
+		box-sizing: border-box;
+		border: 2px inset black;
+
+		display: flex;
+		align-items: center;
+	}
+	.form .input div input {
+		position: absolute;
+		left: 10px;
+		
+		font-size: 12.5px;
+		font-weight: var(--medium);
+		width: calc(100% - 30px);
+		border-radius: 8px;
+		background-color: transparent;
+		border: none;
+		outline: none;
+	}
+	.form .username {
+		top: 160px;
+	}
+	.form .password {
+		top: 258px;
+	}
+	.form .password_confirm {
+		top: 360px;
+	}
+
+	.form .birthday_gender {
+		position: absolute;
+		top: 464px; left: 20px;
+		width: calc(100% - 2 * 20px);
+	}
+	.form .birthday_gender h2 {
+		position: absolute;
+		top: 0; left: 0;
+		margin: 0;
+		
+		color: black;
+		font-size: 24px;
+		font-weight: var(--semibold);
+	}
+
+	.form .birthday {
+		position: absolute;
+		top: 0px; left: 0px;
+
+		width: 182px;
+		height: 96px;
+		/* background-color: red; */
+	}
+	.form .birthday h3 {
+		position: absolute;
+		margin: 0;
+		
+		color: rgba(0, 0, 0, 0.5);
+		font-size: 6px;
+		font-weight: var(--medium);
+	}
+	.form .birthday .dd {
+		position: absolute;
+		bottom: 0px; left: 0px;
+
+		width: 48px;
+		height: 60px;
+		border-radius: 8px;
+		box-sizing: border-box;
+		border: 2px inset black;
+		background-color: white;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.form .birthday .mm {
+		position: absolute;
+		bottom: 0px; left: 54px;
+
+		width: 50px;
+		height: 60px;
+		border-radius: 8px;
+		box-sizing: border-box;
+		border: 2px inset black;
+		background-color: white;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.form .birthday .yyyy {
+		position: absolute;
+		bottom: 0px; left: 110px;
+
+		width: 60px;
+		height: 60px;
+		border-radius: 8px;
+		box-sizing: border-box;
+		border: 2px inset black;
+		background-color: white;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.form .gender {
+		position: absolute;
+		top: 0px; left: 190px;
+
+		width: calc(100% - 190px);
+		height: 96px;
+	}
+	.form .gender .male input {
+		display: none;
+	}
+	.form .gender .male label {
+		position: absolute;
+		bottom: 0px; left: 0px;
+
+		width: calc(100%/2 - 3px);
+		height: 60px;
+		border-radius: 8px;
+		box-sizing: border-box;
+		border: 2px inset black;
+		background-color: rgba(0, 0, 0, 0.025);
+		
+		display: flex;
+		justify-content: center;
+	}
+	.form .gender .male label h3 {
+		position: absolute;
+		margin: 0;
+		top: 6px; left: 0px;
+
+		width: 100%;
+		text-align: center;
+		color: rgb(255, 255, 255);
+		filter: drop-shadow(0 0 2px black) drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
+		font-size: 12px;
+		font-weight: var(--semibold);
+	}
+	.form .gender .male label img {
+		position: absolute;
+		top: 26px; left: calc(50% - 20px/2);
+
+		filter: drop-shadow(0 0 2px rgb(255, 255, 255)) drop-shadow(0 0 4px rgba(255, 255, 255, 0.5)) invert();
+		width: 20px;
+		height: 20px;
+	}
+	.form .gender .male input:checked + label {
+		background-color: #cef0ff;
+	}
+	.form .gender .female input {
+		display: none;
+	}
+	.form .gender .female label {
+		position: absolute;
+		bottom: 0px; left: calc(50% + 3px);
+
+		width: calc(100%/2 - 3px);
+		height: 60px;
+		border-radius: 8px;
+		box-sizing: border-box;
+		border: 2px inset black;
+		background-color: rgba(0, 0, 0, 0.025);
+		
+		display: flex;
+		justify-content: center;
+	}
+	.form .gender .female label h3 {
+		position: absolute;
+		margin: 0;
+		top: 6px; left: 0px;
+
+		width: 100%;
+		text-align: center;
+		filter: drop-shadow(0 0 2px black) drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
+		color: rgb(255, 255, 255);
+		font-size: 12px;
+		font-weight: var(--semibold);
+	}
+	.form .gender .female label img {
+		position: absolute;
+		top: 26px; left: calc(50% - 20px/2);
+
+		filter: drop-shadow(0 0 2px rgb(255, 255, 255)) drop-shadow(0 0 4px rgba(255, 255, 255, 0.5)) invert();
+		width: 20px;
+		height: 20px;
+	}
+	.form .gender .female input:checked + label {
+		background-color: #FFE7F7;
+	}
+
+
+	.form .tnc {
+		position: absolute;
+		top: 600px; left: 20px;
+	}
+	.form .tnc input {
+		scale: 1.35;
+		accent-color: var(--color-main);
+	}
+	.form .tnc label::after {
+		content: "Terms & Conditions";
+		color: var(--color-main);
+		text-decoration: underline;
+		font-size: 18px;
+		font-weight: var(--medium);
+		cursor: pointer;
+	}
+	.form .tnc label {
+		margin-left: 4px;
+		color: black;
+		text-decoration: none;
+		font-size: 18px;
+		font-weight: var(--medium);
+		cursor: default;
+	}
+	.form .button_submit {
+		position: absolute;
+		top: 650px;
+
+		width: calc(100% - 2 * 20px);
+		height: 50px;
+		border-radius: 100px;
+		border: none;
+		background-color: var(--color-main);
+		
+		color: white;
+		font-size: 28px;
+		font-weight: var(--bold);
+
+		text-decoration: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+	}
+	/*#endregion*/
+
+}
